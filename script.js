@@ -15,7 +15,7 @@ const specialCharacters = ['!', '"', '#', '$', '%', '&', '(', ')', '*', '+', ','
 
 let passwordCharacters = [];
 
-let finalePassword = '';
+let finalPassword = '';
 
 let  passwordLength = prompt(`How many characters would you like your password to be? 
 Enter a number from 8 to 128`)
@@ -79,10 +79,10 @@ if (useSpecialCharacters) {
 
 for (i = 0; i < passwordLength; i++) {
    let randomCharacter = passwordCharacters[Math.floor(Math.random() * (passwordCharacters.length - 1))]
-   finalePassword += randomCharacter
+   finalPassword += randomCharacter
 }
 console.log(`Your password is:
-${finalePassword}`)
+${finalPassword}`)
 
 alert(`Your password has been generated.`)
 
@@ -90,7 +90,7 @@ alert(`Your password has been generated.`)
   // var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = finalePassword;
+  passwordText.value = finalPassword;
   
 }
 
