@@ -26,19 +26,16 @@ let useNumbers;
 
 let useSpecialCharacters;
 
-// Assign variables values based on user inputs
+// Assign variables' values based on user inputs
 let  passwordLength = prompt(`How many characters would you like your password to be? 
 Enter a number from 8 to 128`)
 console.log(passwordLength)
 
-while ((passwordLength < 8 || passwordLength > 128 || (parseInt(passwordLength).toString() === 'NaN')) && (passwordLength !== null)) { //Thanks Nick!
+while ((passwordLength < 8 || passwordLength > 128 || parseInt(passwordLength).toString() === 'NaN' || passwordLength.includes(' ')) && (passwordLength !== null)) { //Thanks Nick!
     passwordLength = prompt(`Enter a number from 8 to 128`)
     console.log(passwordLength)
 }
 
-if (passwordLength !== null) { // Stops program if user clicks 'cancel' in response to 'passwordLength' prompt.
-
-getCharset()
 
 function getCharset() {
 
@@ -62,6 +59,11 @@ function getCharset() {
     }
 
 }
+
+if (passwordLength !== null) { // Stops program if user clicks 'cancel' in response to 'passwordLength' prompt.
+
+getCharset()
+
 
 // Following series of 'if' statements fill the empty array 'passwordCharacters' with values based on the user's inputs.
 if (useLowercase) {
