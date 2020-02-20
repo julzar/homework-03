@@ -20,9 +20,8 @@ let finalPassword = '';
 let  passwordLength = prompt(`How many characters would you like your password to be? 
 Enter a number from 8 to 128`)
 console.log(passwordLength)
-
-while ((passwordLength < 8 || passwordLength > 128 || (parseInt(passwordLength).toString() === 'NaN')) && (passwordLength !== null)) {
-    passwordLength = prompt(`Enter a number from 8 to 128`)
+while (passwordLength < 8 || passwordLength > 128 || parseInt(passwordLength).toString() === 'NaN') { //Thanks Nick!
+     passwordLength = prompt(`Enter a number from 8 to 128`)
     console.log(passwordLength)
 }
 
