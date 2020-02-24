@@ -26,17 +26,18 @@ let useNumbers;
 
 let useSpecialCharacters;
 
-// Assign variables' values based on user inputs
+// Assign variables' values based on user inputs.
 let  passwordLength = prompt(`How many characters would you like your password to be? 
 Enter a number from 8 to 128`)
 console.log(passwordLength)
 
-while ((passwordLength !== null) && (parseInt(passwordLength) < 8 || passwordLength > 128 || parseInt(passwordLength.toString()) === 'NaN' || !(Number.isInteger(parseInt(passwordLength))))) { //Thanks Nick!
+// Requires the user to input a valid number for the program to continue
+while ( (passwordLength !== null) && (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength) ) ) {
     passwordLength = prompt(`Enter a number from 8 to 128`)
     console.log(passwordLength)
 }
 
-
+// Recursive function requires user to confirm at least one character choice
 function getCharset() {
 
     useLowercase = confirm(`Do you want your password to include lowercase letters?`)
@@ -60,12 +61,11 @@ function getCharset() {
 
 }
 
-if (passwordLength !== null) { // Stops program if user clicks 'cancel' in response to 'passwordLength' prompt.
+if (passwordLength !== null) { // Stops program if user clicks 'cancel' in response to 'passwordLength' prompt
 
 getCharset()
 
-
-// Following series of 'if' statements fill the empty array 'passwordCharacters' with values based on the user's inputs.
+// Following series of 'if' statements fill the empty array 'passwordCharacters' with values based on the user's inputs
 if (useLowercase) {
     passwordCharacters = passwordCharacters.concat(lettersLowercase)
 }
@@ -81,7 +81,6 @@ if (useNumbers) {
 if (useSpecialCharacters) {
     passwordCharacters = passwordCharacters.concat(specialCharacters)
 }
-// console.log(passwordCharacters)
 
 // This is where the password is actually generated
 for (i = 0; i < passwordLength; i++) {
@@ -94,7 +93,7 @@ ${finalPassword}`)
 alert(`Your password has been generated.`)
 
 }
-  // var password = generatePassword();
+
   var passwordText = document.querySelector("#password");
 
   passwordText.value = finalPassword;
