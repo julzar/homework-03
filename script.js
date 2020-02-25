@@ -26,13 +26,13 @@ let useNumbers;
 
 let useSpecialCharacters;
 
-// Assign variables' values based on user inputs.
+// Assign variables' values based on user inputs
 let  passwordLength = prompt(`How many characters would you like your password to be? 
 Enter a number from 8 to 128`)
 console.log(passwordLength)
 
 // Requires the user to input a valid number for the program to continue
-while ( (passwordLength !== null) && (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength) ) ) {
+while ((passwordLength !== null) && (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength))) {
     passwordLength = prompt(`Enter a number from 8 to 128`)
     console.log(passwordLength)
 }
