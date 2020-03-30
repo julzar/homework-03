@@ -12,3 +12,4 @@ If they click 'cancel' on all four, the choices are presented again.
 If at least one choice has been confirmed after all four have been presented, a password of the chosen length is generated using random characters from the selected character sets.
 The user is alerted that their password has been generated, and when they click 'ok' the password apears in the box above the generate password button.
 
+https://julzar.github.io/homework-03/
